@@ -4,6 +4,7 @@
   "description": "API para envio de e-mails",
   "main": "index.js",
   "scripts": {
+    "start": "pm2-runtime start ecosystem.config.js --env production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Darlan Caruso",
@@ -11,6 +12,7 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
-    "nodemailer": "^6.5.0"
+    "nodemailer": "^6.5.0",
+    "pm2": "^4.5.5"
   }
 }
