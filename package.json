@@ -4,7 +4,7 @@
   "description": "API para envio de e-mails",
   "main": "index.js",
   "scripts": {
-    "start": "pm2-runtime start ecosystem.config.js --env production -- --port 80",
+    "start": "PORT=80 pm2-runtime start ecosystem.config.js --env production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Darlan Caruso",
