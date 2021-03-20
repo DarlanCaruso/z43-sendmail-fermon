@@ -2,7 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const nodemailer = require("nodemailer");
 const app = express();
-const port = process.env.NODE_PORT || 80;
+const port = process.env.PORT || 80;
 
 app.use(bodyParser.text());
 
