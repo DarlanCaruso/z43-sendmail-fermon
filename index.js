@@ -1,16 +1,16 @@
 const express = require("express");
-const bodyParser = require('body-parser')
+const bodyParser = require("body-parser");
 const nodemailer = require("nodemailer");
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.use(bodyParser.text())
+app.use(bodyParser.text());
 
 // async..await is not allowed in global scope, must use a wrapper
 async function main(from, to, subject, text, html) {
   // Generate test SMTP service account from ethereal.email
   // Only needed if you don't have a real mail account for testing
-//   let testAccount = await nodemailer.createTestAccount();
+  //   let testAccount = await nodemailer.createTestAccount();
 
   // create reusable transporter object using the default SMTP transport
   let transporter = nodemailer.createTransport({
@@ -20,6 +20,9 @@ async function main(from, to, subject, text, html) {
     auth: {
       user: process.env.SMTP_AUTH, // generated ethereal user
       pass: process.env.SMTP_PASS, // generated ethereal password
+    },
+    tls: {
+      ciphers: "SSLv3",
     },
   });
 
