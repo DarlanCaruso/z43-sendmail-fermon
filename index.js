@@ -21,6 +21,7 @@ async function main(from, to, subject, text, html) {
       user: process.env.SMTP_AUTH, // generated ethereal user
       pass: process.env.SMTP_PASS, // generated ethereal password
     },
+    requireTLS: true,
     tls: {
       minDHSize: 512,
       minVersion: "TLSv1",
