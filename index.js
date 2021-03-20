@@ -8,6 +8,14 @@ app.use(bodyParser.text());
 
 // async..await is not allowed in global scope, must use a wrapper
 async function main(from, to, subject, text, html) {
+  console.log({ from, to, subject, text });
+  console.log({
+    SMTP_HOST: process.env.SMTP_HOST,
+    SMTP_PORT: process.env.SMTP_PORT,
+    SMTP_SECURE: process.env.SMTP_SECURE,
+    SMTP_AUTH: process.env.SMTP_AUTH,
+    SMTP_PASS: process.env.SMTP_PASS,
+  });
   // Generate test SMTP service account from ethereal.email
   // Only needed if you don't have a real mail account for testing
   //   let testAccount = await nodemailer.createTestAccount();
