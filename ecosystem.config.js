@@ -18,7 +18,7 @@ module.exports = {
         "npm install && pm2 reload ecosystem.config.js --env production",
       "pre-setup": "",
       NODE_PORT: "80",
-      NODE_PORT: "production",
+      NODE_ENV: "production",
     },
   },
 };
