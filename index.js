@@ -22,8 +22,13 @@ async function main(from, to, subject, text, html) {
       pass: process.env.SMTP_PASS, // generated ethereal password
     },
     tls: {
-      ciphers: "SSLv3",
+      minDHSize: 512,
+      minVersion: "TLSv1",
+      maxVersion: "TLSv1.3",
+      ciphers: "ALL",
     },
+    logger: true,
+    debug: true,
   });
 
   try {
